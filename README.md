@@ -8,7 +8,6 @@ Only static color and morph is supported at this time.
 **Use at your own risk.**
 
 ## Installation
-You can install [from the AUR](https://aur.archlinux.org/packages/dell-g15-controller) if on Arch Linux. For dependencies, see the AUR link.
 
 Otherwise, no installation necessary, besides installing python dependencies, and creating the udev rule ```/etc/udev/rules.d/00-aw-elc.rules```, and rebooting. Make sure the user is part of the ```plugdev``` group. Alternatively, run the script as root (not recommended).
 
@@ -17,6 +16,9 @@ Otherwise, no installation necessary, besides installing python dependencies, an
 
 SUBSYSTEM=="usb", ATTRS{idVendor}=="187c", ATTRS{idProduct}=="0550", MODE="0660", GROUP="plugdev", SYMLINK+="awelc"
 ```
+install python dependencies using pip
+
+install acpi_call from here https://packages.ubuntu.com/focal/amd64/acpi-call (dash not underscore)
 
 Polkit is required for power and fan related functionality. If it is not already loaded, load the acpi_call module before launching this application.
 ```
