@@ -16,7 +16,7 @@ Otherwise, no installation necessary, besides installing python dependencies, an
 
 SUBSYSTEM=="usb", ATTRS{idVendor}=="187c", ATTRS{idProduct}=="0550", MODE="0660", GROUP="plugdev", SYMLINK+="awelc"
 ```
-install python dependencies using pip
+install python dependencies using pip or you can use `pipinstaller main.py` to automatically resolve the dependencies
 
 install acpi_call from here https://packages.ubuntu.com/focal/amd64/acpi-call (dash not underscore)
 
