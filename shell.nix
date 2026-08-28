@@ -11,19 +11,16 @@ pkgs.mkShell {
     polkit
   ];
   shellHook = ''
-    export PATH="/run/wrappers/bin:$PATH"
-    export PS1="$ "
-    export TERM=dumb
-    export PROMPT_COMMAND=""
+        export PATH="/run/wrappers/bin:$PATH"
+        export PS1="$ "
+        export TERM=dumb
+        export PROMPT_COMMAND=""
 
-    if [ ! -d .venv ]; then
-      python3 -m venv .venv --system-site-packages
-    fi
-    source .venv/bin/activate
-    pip install pexpect pyusb 2>/dev/null
+        if [ ! -d .venv ]; then
+          python3 -m venv .venv --system-site-packages
+        fi
+        source .venv/bin/activate
 
-    sudo groupadd plugdev 2>/dev/null || true
-    sudo usermod -aG plugdev $LOGNAME 2>/dev/null || true
-    sudo modprobe acpi_call 2>/dev/null || true
+    		python main.py
   '';
 }
